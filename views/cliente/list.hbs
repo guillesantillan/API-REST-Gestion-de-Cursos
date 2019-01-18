@@ -1,0 +1,28 @@
+<h3><img src ="http://www.xenosysusa.com/images/home/under.png" id="image2" width="650" height="100"></h3>
+<h3> Lista de Cursos</h3>
+<h3><a class="btn btn-secondary" href="/"><i class="fa fa-book"></i> Salir</a> <a class="btn btn-primary" href="/cliente/nuevoCurso" title="Nuevo Curso"><i class="fa fa-plus-circle"></i> Nuevo</a> <a class="btn btn-primary" href="/cliente/filtro" title="Filtrar cursos"><i class="fa fa-binoculars"></i> Filtrar</a> </h3>
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>Año de Dictado</th>
+            <th>Duracion</th>
+            <th>Tema</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        {{#each list}}
+        <tr>
+            <td> {{this.anioDictado}} </td>
+            <td> {{this.duracion}} </td>
+            <td> {{this.tema}} </td>
+            <td>
+                <a href="/cliente/{{this._id}}"><i class="fa fa-pencil fa-lg" aria-hidden="true" title="Editar curso o agregar un alumno"></i></a>
+                <a href="/cliente/alumnosCurso/{{this._id}}"><i class="fa fa-eye fa-lg" aria-hidden="true" title="Listar todos los alumnos (JSON)"></i></a>
+                <a href="/cliente/mejorAlumno/{{this._id}}"><i class="fa fa-child fa-lg" aria-hidden="true" title="Mostrar el mejor alumno (JSON)"></i></a>
+                <a href="/cliente/delete/{{this._id}}" onclick="return confirm('Estas seguro que queres eliminar este registro?');"><i class="fa fa-trash fa-lg" aria-hidden="true" title="Eliminar curso"></i></a>
+            </td>
+        </tr>
+        {{/each}}
+    </tbody>
+</table>

@@ -1,0 +1,24 @@
+<h3><img src ="http://www.xenosysusa.com/images/home/under.png" id="image2" width="650" height="100"></h3>
+<h3> <a class="btn btn-secondary" href="/"><i class="fa fa-home"></i> Inicio</a> Log In</h3>
+<form action="/user/login" method="POST" autocomplete="off">
+    <input type="hidden" name="_id" value="{{user._id}}">
+
+    
+    <div class="form-row">
+
+    <div class="form-group col-md-6">
+        <label>Email</label>
+        <input type="text" class="form-control" name="email" placeholder="Email">
+        <div class="text-danger"> {{user.emailError}} </div>
+    </div>
+    <div class="form-group col-md-6">
+        <label>Contraseña</label>
+        <input type="text" class="form-control" name="password" placeholder="Contraseña">
+        <div class="text-danger"> {{user.passwordError}} </div>
+    </div>
+    
+    </div>
+    <div class="form-group">
+        <button type="submit" class="btn btn-info" title="Si solo limpia los datos, entonces no esta Logeado ese user"><i class="fa fa-user-circle"></i> LogIn</button>
+    </div>
+</form>

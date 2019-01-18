@@ -1,0 +1,26 @@
+<h3><a class="btn btn-secondary" href="/cliente/list"><i class="fa fa-plus"></i> Volver</a> Lista de Alumnos</h3>
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>Nombre</th>
+            <th>Apellido</th>
+            <th>DNI</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        {{#each alumnos}}
+        <tr>
+            <td> {{this.alumnos.nombre}} </td>
+            <td> {{this.alumnos.apellido}} </td>
+            <td> {{this.alumnos.DNI}} </td>
+            <td>
+                <a href="/cliente/{{this._id}}"><i class="fa fa-pencil fa-lg" aria-hidden="true"></i></a>
+                <a href="/cliente/nuevoAlumno/{{this._id}}"><i class="fa fa-child fa-lg" aria-hidden="true"></i></a>
+                <a href="/cliente/alumnosCurso/{{this._id}}"><i class="fa fa-eye fa-lg" aria-hidden="true"></i></a>
+                <a href="/cliente/delete/{{this._id}}" onclick="return confirm('Estas seguro que queres eliminar este registro?');"><i class="fa fa-trash fa-lg" aria-hidden="true"></i></a>
+            </td>
+        </tr>
+        {{/each}}
+    </tbody>
+</table>

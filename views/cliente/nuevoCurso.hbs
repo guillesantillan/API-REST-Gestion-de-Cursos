@@ -1,0 +1,28 @@
+<h3><img src ="http://www.xenosysusa.com/images/home/under.png" id="image2" width="650" height="100"></h3>
+<h3> <a class="btn btn-secondary" href="/cliente/list"><i class="fa fa-home"></i> Volver</a> {{viewTitle}} </h3>
+<form action="/cliente/nuevoCurso" method="POST" autocomplete="off">
+    <input type="hidden" name="_id" value="{{cliente._id}}" name="anioDictado" value="{{cliente.anioDictado}}">
+    <div class="form-row">
+    <div class="form-group col-md-4">
+        <label>Año de Dictado</label>
+        <input type="text" class="form-control" name="anioDictado" placeholder="Año de Dictado" value="{{cliente.anioDictado}}">
+        <div class="text-danger"> {{cliente.anioDictadoError}} </div>
+    </div>
+    <div class="form-group col-md-4">
+        <label>Duracion</label>
+        <input type="text" class="form-control" name="duracion" placeholder="Duracion" value="{{cliente.duracion}}">
+        <div class="text-danger"> {{cliente.duracionError}} </div>
+    </div>
+    <div class="form-group col-md-4">
+        <label>Tema</label>
+        <input type="text" class="form-control" name="tema" placeholder="Tema" value="{{cliente.tema}}">
+        <div class="text-danger"> {{cliente.temaError}} </div>
+    </div>
+    </div>
+    <div class="form-group">
+        <button type="submit" class="btn btn-info"><i class="fa fa-database"></i> Agregar</button>
+
+        
+    </div>
+
+</form>
